@@ -1,7 +1,7 @@
 var MOUSE_GRAVITY = 5,
   GRAVITY_Y = 1,
   MOUSE_REPEL = false,
-  WATER = 400,
+  WATER = 700,
   COLOURS = "rgba(97,160,232";
 
 window.requestAnimFrame =
@@ -255,23 +255,22 @@ var fluid = (function () {
       play = true;
       run();
     },
-
-    getGravity: function () {
-        return GRAVITY_Y;
-      },
-
-    setGravity: function (gravity) {
-      GRAVITY_Y = gravity;
-    },
   };
 })();
 
 document.getElementById('zeroGravity').onmousedown = function() {
-    if (fluid.getGravity()) {
-        fluid.setGravity(0);
-    }else {
-        fluid.setGravity(1);
-    }
+    if (GRAVITY_Y) GRAVITY_Y = 0;
+    else GRAVITY_Y = 1;
 }
 
-fluid.init("caca", Window.length, Window.height);
+document.getElementById('repel').onmousedown = function() {
+  if (MOUSE_REPEL) MOUSE_REPEL = false;
+  else MOUSE_REPEL = true;
+}
+
+document.getElementById('set').onmousedown = function() {
+  WATER = document.getElementById('nbwater').value;
+  fluid.init("caca", 1500, 800);
+}
+
+fluid.init("caca", 1500, 800);

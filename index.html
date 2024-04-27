@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script defer src="script.js"></script>
     <button id="zeroGravity">zero gravity</button>
+    <button id="repel">repel</button>
+    <br>
+    <input type="range" name="" id="nbwater" min="0" max="700" step="10" value="500" list="markers" >
+    <datalist id="markers">
+        <option value="100" label="100"></option>
+        <option value="200" label="200"></option>
+        <option value="300" label="300"></option>
+        <option value="400" label="400"></option>
+        <option value="500" label="500"></option>
+        <option value="600" label="600"></option>
+      </datalist>
+    <button id="set">set</button>
+    <br>
     <canvas id= "caca"> </canvas>
 </body>
 </html>
